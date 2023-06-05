@@ -34,7 +34,7 @@ spec:
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
           spring-boot-convention/service-intent-mysql
-        developer.apps.tanzu.vmware.com/image-source-digest: kapte.azurecr.io/tap-packages/spring-sensors:latest@sha256:19b1ade1bb7555c78443dc47226a16bb581fc622a22547dcfb88b0fb4fa751c8
+        developer.apps.tanzu.vmware.com/image-source-digest: kapte.azurecr.io/tap-packages/spring-sensors:latest@sha256:0cac76fb4380c3dd1e8042d2c4b57e307f5858261aa65ec33fe1320f4a59fc9f
         developer.conventions/target-containers: workload
         services.conventions.carto.run/mysql: mysql-connector-java/8.0.23
       labels:
@@ -59,7 +59,7 @@ spec:
           value: aoeu
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: kapte.azurecr.io/tap-packages/yelb-spring-sensors-frontend-tanzu-workload@sha256:9c3731e8405cc3ca6c49fec6c4a1fa710f52ce7d360e2a8c23edc7c857d58641
+        image: kapte.azurecr.io/tap-packages/yelb-spring-sensors-frontend-tanzu-workload@sha256:40be934dd4181b63e2efc7653ef5aeb32b98cf2a6aa53137a8ced795aee52267
         name: workload
         ports:
         - containerPort: 8080
