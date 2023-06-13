@@ -1,7 +1,7 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: tanzu-java-web-app-demo
+  name: tanzu-java-web-app-1
   annotations:
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
@@ -11,7 +11,7 @@ metadata:
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/component: run
-    carto.run/workload-name: tanzu-java-web-app-demo
+    carto.run/workload-name: tanzu-java-web-app-1
 spec:
   template:
     metadata:
@@ -36,19 +36,19 @@ spec:
         apps.tanzu.vmware.com/auto-configure-actuators: "false"
         apps.tanzu.vmware.com/has-tests: "true"
         apps.tanzu.vmware.com/workload-type: web
-        carto.run/workload-name: tanzu-java-web-app-demo
+        carto.run/workload-name: tanzu-java-web-app-1
         conventions.carto.run/framework: spring-boot
         tanzu.app.live.view: "true"
         tanzu.app.live.view.application.actuator.path: actuator
         tanzu.app.live.view.application.actuator.port: "8080"
         tanzu.app.live.view.application.flavours: spring-boot
-        tanzu.app.live.view.application.name: tanzu-java-web-app-demo
+        tanzu.app.live.view.application.name: tanzu-java-web-app-1
     spec:
       containers:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: kapte.azurecr.io/tap-packages/tanzu-java-web-app-demo-tanzu-workload@sha256:8a3afbbdd9f39ea2fdad9c2232b7517e2a47143a5ad50b18da986d69f4dfa31b
+        image: kapte.azurecr.io/tap-packages/tanzu-java-web-app-1-tanzu-workload@sha256:c85b1a357cd2bf14331cf0a0f84f54ef9c9cb5b76c366840fbb12ba730dd6aea
         livenessProbe:
           httpGet:
             path: /livez
